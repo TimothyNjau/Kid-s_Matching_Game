@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.navBar {
+    text-align: center;
+    border: 1px solid brown;
+    height: 6rem;
+    background: radial-gradient(rgb(235, 217, 62), rgb(255, 116, 62));
+}
+
+.title {
+    border: 1px dashed;
+    width: fit-content;
+    margin: auto;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.customBtn {
+    font-size: 2rem;
+    border-radius: 20%;
+}
+
+.gameCont {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 2rem;
+    justify-content: space-between;
+    width: 90vw;
+    height: 70vh;
+    border: 2px solid;
+}
+#loadBtn {
+    width: fit-content;
+    align-self: top;
+}
+#svgCont{
+    height: 28rem;
+    width: 60rem;
+    border: 1px dashed;
+    margin: auto;
+    box-sizing: border-box;
+}
+.imgCont {
+    height: 600px;
+    width: 150px;
+    border: 2px dashed brown;
+    display: flex;
+    flex-direction: column;    
+}
+
+.images {
+    height: 10rem;
+    width: 5.5rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+#line {
+    width: 10px;
+    height: 10px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/layout.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navBar">
+        <div class="title">
+            (っ◔◡◔)っ ♥ matching game ♥
+        </div>
+    </nav>
+    <!-- <div style="text-align: center;margin: 4rem;">
+        <button class="customBtn" id="startBtn">Let's Play</button>
+    </div> -->
+    <section>
+        <button id="loadBtn" class="customBtn">Start</button>
+    </section>
+    <!--
+        <svg width="800px" height="400px" class="svgCont">
+        <image xlink:href="static/images/fruits/mango.jpg" alt="" x="0" y="0" height="200px" width="200px" />
+        </svg>
+        <svg id="mySVG" width="500" height="500">
+        <path id="line" stroke="black" stroke-width="2" fill="none" />
+    -->
+    <div class="gameCont">
+        <svg id="svgCont">
+            <path id="line" stroke-width="10" stroke-linecap="round" fill="transparent" />
+            <g id="odd" class="images">
+            </g>
+            <g id="even" class="images">
+            </g>
+
+        </svg>
+    </div>
+
+</body>
+<script src="static/src/global.js"></script>
+<script src="static/src/main.js" ></script>
+<script src="static/src/events.js" ></script>
+</html>

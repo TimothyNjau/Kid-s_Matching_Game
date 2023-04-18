@@ -1,0 +1,35 @@
+@media(max-width: 880px){
+    html {
+        font-size: 10px;
+    }
+}
+@media (max-width:600px) {
+    html{
+        font-size: 8px;
+    }
+}
+
+.customBtn{
+    background-image: linear-gradient(to right, rgb(255, 112, 96),rgb(220, 223, 53));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight:900;
+    
+}
+.customBtn:hover{
+    cursor: pointer;
+    background-image: linear-gradient(270deg, rgb(231, 168, 168),rgb(100,200,200));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight:900;
+    box-shadow: 2px 2px 10px 0px;
+}
+.customBtn:active{
+    border-top: white;
+    border-left: white;
+}
+.finalPath{
+    z-index: -1;
+}
