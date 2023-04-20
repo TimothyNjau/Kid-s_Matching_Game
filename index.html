@@ -19,29 +19,41 @@
     <!-- <div style="text-align: center;margin: 4rem;">
         <button class="customBtn" id="startBtn">Let's Play</button>
     </div> -->
-    <section>
+    <section class="gameControl">
         <button id="loadBtn" class="customBtn">Start</button>
+        <button id="changeBtn" class="customBtn">Change</button>
+        <button id="backBtn" class="customBtn">Back</button>
     </section>
-    <!--
-        <svg width="800px" height="400px" class="svgCont">
-        <image xlink:href="static/images/fruits/mango.jpg" alt="" x="0" y="0" height="200px" width="200px" />
-        </svg>
-        <svg id="mySVG" width="500" height="500">
-        <path id="line" stroke="black" stroke-width="2" fill="none" />
-    -->
+    <section class="categories">
+        <button class="categoryBtn" id="shapes">Shapes</button>
+        <button class="categoryBtn" id="numbers">Numbers</button>
+        <button class="categoryBtn" id="letters">Letters</button>
+    </section>
+
     <div class="gameCont">
         <svg id="svgCont">
-            <path id="line" stroke-width="10" stroke-linecap="round" fill="transparent" />
-            <g id="odd" class="images">
+            <g id="odd">
             </g>
-            <g id="even" class="images">
+            <g id="even">
             </g>
-
         </svg>
+        <div class="viewCont">
+            <div class="score">
+                <div id="correctScore"></div>
+                <label for="correctScore" id="correctScoreLabel"></label>
+            </div>
+            <div class="score">
+                <div id="wrongScore"></div>
+                <label for="wrongScore" id="wrongScoreLabel"></label>
+            </div>
+            <button class="matchBtn">
+                Match It
+            </button>
+        </div>
     </div>
-
 </body>
 <script src="static/src/global.js"></script>
-<script src="static/src/main.js" ></script>
-<script src="static/src/events.js" ></script>
+<script src="static/src/main.js"></script>
+<script src="static/src/events.js"></script>
+
 </html>

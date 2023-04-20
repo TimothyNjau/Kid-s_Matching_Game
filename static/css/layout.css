@@ -6,13 +6,14 @@ body {
 
 .navBar {
     text-align: center;
-    border: 1px solid brown;
+    border:none;
     height: 6rem;
+    width: 100%;
     background: radial-gradient(rgb(235, 217, 62), rgb(255, 116, 62));
+    transition: all 5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .title {
-    border: 1px dashed;
     width: fit-content;
     margin: auto;
     margin-top: 1rem;
@@ -29,21 +30,24 @@ body {
     display: flex;
     flex-direction: row;
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 1rem;
     justify-content: space-between;
+    background:radial-gradient(white, rgb(192, 201, 201)) ;
+    bottom: 0;
+    position: absolute;
     width: 90vw;
-    height: 70vh;
+    height: 2vh;
     border: 2px solid;
+    transition: all 5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #loadBtn {
     width: fit-content;
     align-self: top;
 }
 #svgCont{
-    height: 28rem;
-    width: 60rem;
+    height: 100%;
+    width: 50rem;
     border: 1px dashed;
-    margin: auto;
     box-sizing: border-box;
 }
 .imgCont {
@@ -55,11 +59,53 @@ body {
 }
 
 .images {
-    height: 10rem;
-    width: 5.5rem;
+    height: 8rem;
+    width: 6rem;
+    margin: 10px;
+    object-fit: contain;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
-#line {
-    width: 10px;
-    height: 10px;
+.viewCont{
+    width: calc(100% - 50rem);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    bottom: 0;
+    position: relative;
+    bottom: 0;
+    position: relative;
+    overflow: hidden;
+}
+.score{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: fit-content;
+    margin-left: 1rem;
+}
+.score > label {
+    margin: 2rem;
+}
+#correctScore{
+    height: 4rem;
+    width: 4rem;
+    background-image: url(/static/images/icons/thumbs-up.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#wrongScore{
+    height: 4rem;
+    width: 4rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/static/images/icons/thumbs-down.png);
+}
+.matchBtn{
+    height: 4rem;
+    width: 6rem;
+    font-size: 1.2rem;
+    margin: 2rem;
+    border-radius: 20px;
 }
