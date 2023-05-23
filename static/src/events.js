@@ -8,19 +8,19 @@ svg.prepend(g);
 
 loadBtn.addEventListener("click", () => {
     navBar.style.background = "linear-gradient(to left, rgb(231, 168, 168),rgb(100,200,200))";
-    startGame();
-   
+    removeLines();
+
 })
-function startGame(){
+function startGame() {
     oddCont = document.getElementById("odd"), evenCont = document.getElementById("even");
-    
-    while(oddCont.firstChild){
+
+    while (oddCont.firstChild) {
         oddCont.removeChild(oddCont.firstChild);
     }
-    while(evenCont.firstChild){
+    while (evenCont.firstChild) {
         evenCont.removeChild(evenCont.firstChild);
     }
-    
+
     canvas.loadImages(gameObject);
     canvas.addFunctionality();
     setInterval(canvas.compareImages(), 1000);
@@ -32,12 +32,12 @@ canvas["addFunctionality"] = () => {
         let flag = false;
         let startX, startY;
         let line = document.createElementNS('http://www.w3.org/2000/svg', "path");
-        
+
         elem.addEventListener("click", draw);
         svg.addEventListener("mousemove", drawing);
         svg.addEventListener("mouseup", stopDrawing);
-        
-        function draw (){
+
+        function draw() {
             elem.style.filter = 'drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8))';
             let imageDimension = elem.getBoundingClientRect();
             let imageX, imageY;
@@ -80,8 +80,8 @@ canvas["addFunctionality"] = () => {
         }
         function stopDrawing() {
             if (flag) {
-                flag = false;                
-            }           
+                flag = false;
+            }
         }
     })
 }
@@ -108,7 +108,7 @@ canvas["compareImages"] = () => {
     })
 }
 let choices = () => {
-    let pass = 0,fail = 0;
+    let pass = 0, fail = 0;
     let lineArr = svg.querySelectorAll(".line");
     let y = selectedImage.length - 1;
     for (let x = 0; x < selectedImage.length; x++) {
@@ -116,30 +116,34 @@ let choices = () => {
             lineArr[y].setAttribute("stroke", "green");
             pass++;
             let correctLabel = document.getElementById("correctScoreLabel");
-            correctLabel.innerText = pass;           
+            correctLabel.innerText = pass;
         } else {
             lineArr[y].setAttribute("stroke", "red");
             fail++;
             let failLabel = document.getElementById("wrongScoreLabel");
-            failLabel.innerText = fail;           
+            failLabel.innerText = fail;
         }
         y--;
     }
-    if( fail > 0){
-        myAudio.src = "/static/sounds/wrong-choice-one.mp3"
+    if (fail > 0) {
+        myAudio.src = "../static/sounds/wrong-choice-one.mp3";
+        myAudio.play();        
+    } else {
+        myAudio.src = "../static/sounds/correct-choice.mp3"
         myAudio.play();
-        setTimeout(removeLines, 3000);
-    } else if (pass > 3) {
-        myAudio.src = "/static/sounds/correct-choice.mp3"
-        myAudio.play();
-        setTimeout(removeLines(), 2000) ;
     }
+
+    setTimeout(removeLines, 3000);
 }
-function removeLines(){
-    svg.querySelectorAll(".line").forEach( path => {
+function removeLines() {
+    svg.querySelectorAll(".line").forEach(path => {
         path.remove();
     });
     selectedImage = [], answerImage = [];
+    let failLabel = document.getElementById("wrongScoreLabel");
+    let correctLabel = document.getElementById("correctScoreLabel");
+    failLabel.innerText = "";
+    correctLabel.innerText = "";
     startGame();
 }
 matchBtn.addEventListener("click", choices);
@@ -165,23 +169,23 @@ backBtn.addEventListener("click", () => {
     let category = document.querySelector(".categories");
     let gameControl = document.querySelector(".gameControl");
     let oddCont = document.getElementById("odd");
-    let evenCont =  document.getElementById("even");
+    let evenCont = document.getElementById("even");
     navBar.style.background = "radial-gradient(rgb(235, 217, 62), rgb(255, 116, 62))";
-   selectedImage = [];
+    selectedImage = [];
 
-    svg.querySelectorAll(".line").forEach( path => {
+    svg.querySelectorAll(".line").forEach(path => {
         path.remove();
     });
-    while(oddCont.firstChild){
+    while (oddCont.firstChild) {
         oddCont.removeChild(oddCont.firstChild);
     }
-    while(evenCont.firstChild){
+    while (evenCont.firstChild) {
         evenCont.removeChild(evenCont.firstChild);
     }
     gameCont.style.height = "2vh";
     category.style.transform = "translateY(0%)";
     gameControl.style.left = "-100%";
-    
+
 })
 
 

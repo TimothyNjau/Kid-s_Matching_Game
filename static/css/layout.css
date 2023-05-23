@@ -91,7 +91,7 @@ body {
 #correctScore{
     height: 4rem;
     width: 4rem;
-    background-image: url(/static/images/icons/thumbs-up.png);
+    background-image: url(../images/icons/thumbs-up.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -100,7 +100,7 @@ body {
     width: 4rem;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url(/static/images/icons/thumbs-down.png);
+    background-image: url(../images/icons/thumbs-down.png);
 }
 .matchBtn{
     height: 4rem;
